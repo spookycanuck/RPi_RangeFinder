@@ -14,3 +14,4 @@ To eventually replace the LED output with power to a DC motor, which will be att
 ### Version History
 Version history in the form of major milestones:
 * **v0** - 10/1/2020 - Sensor attached to an external breadboard. Code controls sensor & LEDs via GPIO. Takes inputs from sensor & calculates distance. Outputs result to console
+  * **v0.1** - 10/2/2020 - Reworked the distance call into a function to make it persistent. Instead of outputting a blinking or steady light, I added another light from a different GPIO pin. Simulating power to the motor versus power to somewhere else based on distance measured.
