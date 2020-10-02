@@ -34,13 +34,17 @@ def get_distance():
 
     return distance
 
-while True:
-    distance = get_distance()
-    if distance <= 8:
-        GPIO.output(LED,GPIO.HIGH)
-	GPIO.output(BLUE,GPIO.LOW)
-    else:
-        GPIO.output(BLUE,GPIO.HIGH)
-	GPIO.output(LED,GPIO.LOW)
 
-GPIO.cleanup()
+try:
+    while True:
+        distance = get_distance()
+        if distance <= 8:
+            GPIO.output(LED,GPIO.HIGH)
+            GPIO.output(BLUE,GPIO.LOW)
+        else:
+            GPIO.output(BLUE,GPIO.HIGH)
+	    GPIO.output(LED,GPIO.LOW)
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+    print "\n ---GPIO RESET---"
